@@ -1,0 +1,21 @@
+#liquid-hover-table th {
+  text-align: left;
+  padding: 10px;
+}
+
+#liquid-hover-table td {
+  vertical-align: middle;
+  padding: 10px;
+}
+
+.media-preview {
+  margin-bottom: 6px;
+}
+
+.media-preview img.thumb {
+  max-width: 120px;
+  max-height: 120px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  display: block;
+}
