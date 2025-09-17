@@ -121,6 +121,11 @@ function liquid_hover_settings_page() {
  * SHORTCODE
  * ------------------------------ */
 add_shortcode('liquid_hover', function ($atts) {
+	
+	  if (is_admin()) {
+        return ''; // or return '<p>Preview disabled in admin.</p>';
+    }
+	
     $atts = shortcode_atts(['id' => ''], $atts, 'liquid_hover');
     $items = get_option('liquid_hover_items', []);
     $id = intval($atts['id']);
