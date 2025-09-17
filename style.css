@@ -1,12 +1,10 @@
 .liquid-hover-section {
   width: 100%;
-
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   position: relative;
-
 }
 
 .container-mn {
@@ -20,9 +18,14 @@
 
 .container-mn .img {
   width: 100%;
-  max-width: 800px;
+  max-width: 100%;
   position: relative;
   overflow: hidden;
+
+  /* flexbox ensures image/canvas is centered if aspect ratio is forced */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Aspect ratio options */
@@ -32,9 +35,12 @@
 .container-mn .img[data-aspect="21/9"] { aspect-ratio: 21 / 9; }
 .container-mn .img[data-aspect="auto"] { aspect-ratio: auto; height: auto; }
 
+/* Canvas fix */
 .container-mn .img canvas {
-  width: 100% !important;
-  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  width: auto !important;
+  height: auto !important;
   display: block;
-  object-fit: contain;
+  object-fit: contain; /* prevents cropping */
 }
